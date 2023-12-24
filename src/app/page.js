@@ -20,6 +20,11 @@ const page = () => {
     setName("Sushant");
   }
 
+  // component inside component
+  const InnerComp = () => {
+    return <h2>I am inner component</h2>;
+  }
+
   return (
     <main className={styles.main}>
       <h1>Events, Functions and State {name}</h1>
@@ -30,6 +35,13 @@ const page = () => {
       {/* <button onClick={() => apple("Sushant")}>Click me</button> */}
 
       <button onClick={handleClick}>Click Me</button>
+
+      {/* Calling as a component */}
+      {/* <InnerComp /> */}
+
+      {/* Calling as a function */}
+      {InnerComp()}
+
     </main>
   );
 };
