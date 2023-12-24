@@ -6,8 +6,8 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
+          Get started by Next Js; 
+          <code className={styles.code}> src/app/page.js</code>
         </p>
         <div>
           <a
