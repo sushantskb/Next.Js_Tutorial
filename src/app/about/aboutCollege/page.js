@@ -1,6 +1,6 @@
 const aboutCollege = () => {
   return (
-    <h1>
+    <h1 className="heading">
       College Details
     </h1>
   )

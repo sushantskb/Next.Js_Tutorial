@@ -1,5 +1,4 @@
 "use client"
-import styles from "../../page.module.css";
 import { useRouter } from 'next/navigation';
 const StudentLogin = () => {
     const router = useRouter();
@@ -7,16 +6,19 @@ const StudentLogin = () => {
         router.push(name);
     }
   return (
-    <main className={styles.main}>
-      Students
+    <main>
+      <h1 className="heading">Student Login</h1>
       <br />
-      <label>Name</label>
-      <input className={styles.input} type='text' name='name' placeholder='Enter your name' />
+      
+      <div>
+      <label className=' label'>Name</label>
+      <input className="input" type='text' name='name' placeholder='Enter your name' />
       <br />
-      <label>password</label>
-      <input type='password' name='password' placeholder='Enter your password' />
+      <label className='label'>password</label>
+      <input className='input' type='password' name='password' placeholder='Enter your password' />
 
-      <button onClick={()=> navigate("/")} type='submit'>submit</button>
+      <button className='btn' onClick={()=> navigate("/")} type='submit'>submit</button>
+      </div>
     </main>
   )
 }

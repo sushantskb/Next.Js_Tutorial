@@ -1,0 +1,25 @@
+.menu-list{
+    display: flex;
+}
+.menu-list .logo{
+    margin-right: 50px;
+}
+.menu-list li{
+    margin: 12px;
+    list-style-type: none;
+    font-size: 30px;
+    font-weight: 300;
+}
+.menu-list a{
+    text-decoration: none;
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.heading{
+    font-size: 40px;
+    color: orange;
+    text-align: center;
+    margin-top: 90px;
+}
