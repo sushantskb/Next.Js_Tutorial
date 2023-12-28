@@ -22,6 +22,9 @@ const home = ()=> {
       <br />
       <br />
       <button onClick={()=> navigate("/about")}>Go to About</button>
+      <br />
+      <br />
+      <button onClick={() => navigate("/studentList")}>Student List</button>
     </main>
   );
 }
