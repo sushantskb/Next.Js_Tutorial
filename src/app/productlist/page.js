@@ -1,3 +1,4 @@
+import Price from "./product";
 async function fetchData() {
   let data = await fetch("https://dummyjson.com/products");
   data = await data.json();
@@ -14,7 +15,7 @@ const ProductList = async ()=> {
         product.map((item)=> (
           <div key={item._id}>
             <h3>Name : {item.title}</h3>
-            <h3>Price : ${item.price}</h3>
+            <Price price={item.price} />
             <hr />
           </div>
         ))
