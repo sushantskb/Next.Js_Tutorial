@@ -1,0 +1,16 @@
+.red{
+    color: red;
+}
+
+.green{
+    color: green;
+}
+.btn{
+    background: plum;
+    padding: 12px 12px;
+    color: white;
+    border: none;
+    font-weight: 700;
+    border: none;
+    border-radius: 30px;
+}
