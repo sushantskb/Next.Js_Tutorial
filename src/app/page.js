@@ -1,7 +1,7 @@
 const Home = () => {
   return (
     <>
-      <h1>Script Component</h1>
+      <h1>Loader In Next JS</h1>
     </>
   );
 };
