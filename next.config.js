@@ -1,7 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        domains : ["img.freepik.com"]
+    redirects: async () => {
+        return [
+            {
+                source: "/todolist",
+                destination: "/",
+                permanent: false
+            },
+            {
+                source: "/todolist/:todo",
+                destination: "/",
+                permanent: false
+            },
+        ]
     }
 }
 
