@@ -9,5 +9,8 @@ export function GET(){
 export async function POST(request){
     let payload = await request.json();
     console.log(payload);
-    return NextResponse.json({result:payload.name})
+    if(!payload.name || !payload.age || !payload.email){
+        return NextResponse.json({result : "require fields are not found", success: false}, {status: 404})
+    }  
+    return NextResponse.json({result:"User added", success: true}, {status: 200})
 }
