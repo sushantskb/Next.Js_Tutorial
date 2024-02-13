@@ -15,6 +15,7 @@ const Page = async() => {
         users.map((item)=>(
             <div key={item.id}>
                 <Link href={`users/${item.id}`}>{item.name}</Link>
+                <span style={{marginLeft: "40px"}}><Link href={`users/${item.id}/update`}>Edit</Link></span>
             </div>
         ))
       }
