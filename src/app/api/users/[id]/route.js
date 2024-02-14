@@ -24,3 +24,12 @@ export async function PUT(request, content){
 
     return NextResponse.json({result :payload, success: true},{status: 201});
 }
+
+export function DELETE(request, content){
+  let id = content.params.id; 
+  if(id){
+    return NextResponse.json({result: "User Deleted", success: true}, {status: 201})
+  } else {
+    return NextResponse.json({result: "Internal Error", success: false}, {status: 404});
+  }
+}
