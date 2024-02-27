@@ -6,6 +6,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Link href="/addProduct">Add Product</Link>
+      <Link href="/products">Products</Link>
     </main>
   );
 }

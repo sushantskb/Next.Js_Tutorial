@@ -1,18 +1,35 @@
+// api/products.js
+
 import { NextResponse } from "next/server";
 import mongoose from "mongoose";
 import { connectionString } from "@/lib/db";
 import { Product } from "@/lib/models/product";
-export async function GET(){
-    await mongoose.connect(connectionString).then(console.log("connected")).catch((err) => console.log(err));
-    let data = await Product.find();
-    console.log(data);
-    return NextResponse.json({result : data})
-}
 
-export async function POST(req){
+mongoose.connect(connectionString).then(() => {
+  console.log("Connected to MongoDB successfully");
+}).catch((err) => {
+  console.error("Failed to connect to MongoDB:", err);
+});
+
+export async function GET() {
+    try {
+      const data = await Product.find();
+      return NextResponse.json({ result: data, success: true });
+    } catch (error) {
+      console.error("Error fetching products:", error);
+      return NextResponse.json({ result: [], message: "Failed to fetch products" }, { success: false });
+    }
+  }
+  
+
+export async function POST(req) {
+  try {
     const data = await req.json();
-    await mongoose.connect(connectionString).then(console.log("Connected")).catch((err)=>console.log(err));
-    let product = new Product(data);
+    const product = new Product(data);
     const result = await product.save();
-    return NextResponse.json({ result, success: true});
+    return NextResponse.json({ result, success: true });
+  } catch (error) {
+    console.error("Error creating product:", error);
+    return NextResponse.json({ result: null, message: "Failed to create product" }, { success: false });
+  }
 }
