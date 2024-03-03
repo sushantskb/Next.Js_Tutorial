@@ -17,3 +17,11 @@ export async function PUT(req, cont){
     let result = await Product.findOneAndUpdate(filter, payload);
     return NextResponse.json({result, success: true})
 }
+export async function GET(req, cont){
+    // console.log(cont);
+    const productId = cont.params.productid;
+    const record = {_id: productId};
+    console.log(record);
+    let result = await Product.findById(record);
+    return NextResponse.json({result, success: true})
+}

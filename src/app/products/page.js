@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 /* eslint-disable react/jsx-key */
 const getProducts = async () => {
   try {
@@ -73,6 +75,16 @@ export default async function Page() {
             >
               Category
             </th>
+            <th
+              style={{
+                borderBottom: "1px solid #ddd",
+                padding: "8px",
+                textAlign: "left",
+                backgroundColor: "#f2f2f2",
+              }}
+            >
+              
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -83,6 +95,7 @@ export default async function Page() {
               <td>{item.color}</td>
               <td>{item.company}</td>
               <td>{item.category}</td>
+              <td><Link href={"products/" + item._id}>Edit</Link></td>
             </tr>
           ))}
         </tbody>
