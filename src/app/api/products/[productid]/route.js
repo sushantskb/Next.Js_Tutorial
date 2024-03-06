@@ -25,3 +25,10 @@ export async function GET(req, cont){
     let result = await Product.findById(record);
     return NextResponse.json({result, success: true})
 }
+
+export async function DELETE(req, cont){
+  const productId = cont.params.productid;
+  const record = {_id: productId};
+  const result = await Product.deleteOne(record);
+  return NextResponse.json({result, success: true});
+}

@@ -1,3 +1,4 @@
+import DeleteProduct from "@/lib/DeleteProduct";
 import Link from "next/link";
 
 /* eslint-disable react/jsx-key */
@@ -82,9 +83,15 @@ export default async function Page() {
                 textAlign: "left",
                 backgroundColor: "#f2f2f2",
               }}
-            >
-              
-            </th>
+            ></th>
+            <th
+              style={{
+                borderBottom: "1px solid #ddd",
+                padding: "8px",
+                textAlign: "left",
+                backgroundColor: "#f2f2f2",
+              }}
+            ></th>
           </tr>
         </thead>
         <tbody>
@@ -95,7 +102,12 @@ export default async function Page() {
               <td>{item.color}</td>
               <td>{item.company}</td>
               <td>{item.category}</td>
-              <td><Link href={"products/" + item._id}>Edit</Link></td>
+              <td>
+                <Link href={"products/" + item._id}>Edit</Link>
+              </td>
+              <td>
+                <DeleteProduct id={item._id} />
+              </td>
             </tr>
           ))}
         </tbody>
