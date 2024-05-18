@@ -1,8 +1,10 @@
+import HeroSection from "./components/HeroSection";
+
 function Page() {
   return (
-    <div>
-      Hello World
-    </div>
+    <>
+      <HeroSection />
+    </>
   );
 }
 
