@@ -1,1 +1,0 @@
-export const BASE_URI = process.env.NODE_ENV === "development" ? "www.api.dev.com" : "www.api.prod.com"
