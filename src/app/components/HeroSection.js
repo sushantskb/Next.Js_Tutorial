@@ -10,13 +10,13 @@ const mulish = Mulish({
   display: "swap",
 });
 
-const Herosection = () => {
+const Herosection = ({title, imageURL}) => {
   return (
     <main className={heroStyles.main_section}>
       <div className={styles.container}>
         <div className={styles.grid_two_section}>
           <div className={heroStyles.hero_content}>
-            <h1>LET&apos; WATCH MOVIE TOGETHER </h1>
+            <h1>{title}</h1>
             <p>
               From award-winning dramas to blockbuster action movies, we&apos;ve
               got you covered. Browse our selection of the latest and greatest
@@ -29,7 +29,7 @@ const Herosection = () => {
 
           <div className={heroStyles.hero_image}>
             <Image
-              src="/about1.svg"
+              src={imageURL}
               alt="watching netflix"
               width={500}
               height={500}

@@ -1,10 +1,9 @@
+import Herosection from "../components/HeroSection"
 
-function Page() {
+function About() {
   return (
-    <div>
-      About Us Page
-    </div>
+    <Herosection title={"Our Story"} imageURL={"/about1.svg"} />
   )
 }
 
-export default Page
+export default About
