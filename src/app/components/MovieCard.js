@@ -7,13 +7,13 @@ const MovieCard = ({item}) => {
   return (
     <div className={styles.card}>
         <div className={styles.card_image}>
-            <Image src={item.jawSummary.backgroundImage.url} alt={title} width={250} height={200} />
+            <Image src={item.jawSummary.backgroundImage.url} alt={title} width={260} height={200} />
         </div>
 
         <div className={styles.card_data}>
-            <h2>{title}</h2>
+            <h2>{title.substring(0, 18)}</h2>
             <p>
-                {synopsis}
+                {`${synopsis.substring(0, 66)}...`}
             </p>
 
             <Link href={`/movie/${id}`}>
