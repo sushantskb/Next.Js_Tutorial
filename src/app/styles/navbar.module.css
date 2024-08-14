@@ -117,6 +117,7 @@
 
     .mobile-nav-icon:hover, .close-outline:hover{
         color: #e50914;
+        z-index: -1;
     }
 
     /* hide the original nav menu  */
@@ -147,6 +148,7 @@
 
     .navbarList .navbarItem a:hover {
         color: #e50914;
+        z-index: -1;
     }
 
     /*when user click on the open menu icon*/
