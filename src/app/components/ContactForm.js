@@ -10,11 +10,41 @@ const ContactForm = () => {
     message: "",
   });
 
+  const [status, setStatus] = useState("");
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser((prev) => ({ ...prev, [name]: value }));
   };
-  const handleSubmit = () => {};
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {"Content_Type" : "application/json"},
+        body: JSON.stringify({
+          username: user.username,
+          email: user.email,
+          phone: user.email,
+          message: user.message,
+        })
+      })
+
+      if(response.status === 200){
+        setUser({
+          username: "",
+          email: "",
+          phone: "",
+          message: ""
+        })
+        setStatus("success")
+      } else {
+        setStatus("error")
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <form className={styles.contact_form} onSubmit={handleSubmit}>
       <div className={styles.input_field}>
